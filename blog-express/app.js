@@ -1,7 +1,8 @@
 var createError = require('http-errors');
 var express = require('express');
-var path = require('path');
+
 var cookieParser = require('cookie-parser');
+var path = require('path');
 var logger = require('morgan');
 const fs = require('fs')
 
@@ -29,6 +30,7 @@ if (ENV !== 'prod') {
     // 开发环境 / 测试环境
     app.use(logger('dev'));
 } else {
+
     console.log('prod');
     // 线上环境
     const logFileName = path.join(__dirname, 'logs', 'access.log')
